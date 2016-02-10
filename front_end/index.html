@@ -10,19 +10,21 @@
   <body ng-app="travelApp" ng-controller="MainController as main">
 
     <div ng-repeat="post in main.posts | orderBy: 'upvotes' ">
-      {{post.title}} - upvotes: {{post.upvotes}}
-      <button ng-click="incrementUpvotes(main.upvotes)">^</button>
+      <span ng-click="incrementUpvotes(main.upvotes)">^</<span>
+      <a ng-show="post.link" href="{{post.link}}">
+        {{post.title}}
+      </a>
+      <span ng-hide="post.link">
+        {{post.title}}
+      </span>
+        - upvotes: {{post.upvotes}}
     </div>
+    <br>
       <form ng-submit="main.addPost()">
-      <input type="text" ng-model="main.title">
+      <input type="text" placeholder="Write your post here" ng-model="main.title">
+      <br>
+      <input type="text" placeholder="Insert your link here" ng-model="main.link">
       <button type="submit">Post</button>
-      </form>
-      <form ng-submit="main.addpost()">
-        <input type="test" placeholder="Add your link here" ng-model="title">
-        <br>
-        <input type="text" placeholder="link" ng-model="link">
-        <br>
-        <button type="submit">Link</button>
       </form>
   </body>
 </html>

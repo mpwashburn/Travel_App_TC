@@ -16,12 +16,18 @@ var app = angular.module('travelApp', [])
     self.addPost = function (){
 
       // this is meant to require text to be inputed so that an blank title can't be posted. However, it's not working.
-      if(!this.title || this.title === '') {
-        return
+    if(!this.title || this.title === '') {
+        return;
       }
-    self.posts.push({title: self.title, upvotes: 0});
+    self.posts.push({
+      title: self.title,
+      link: self.link,
+      upvotes: 0
+    });
+
     self.title = '';
-   }
+    self.link = '';
+   };
     self.incrementUpvotes = function(post) {
       post.upvotes +=1;
     }
