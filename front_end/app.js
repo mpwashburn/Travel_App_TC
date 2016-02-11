@@ -1,4 +1,8 @@
 var app = angular.module('travelApp', [])
+
+  .factory('posts', [function(){
+
+  }])
   .controller('MainController', MainController);
 
   MainController.$inject = ['$http'];
