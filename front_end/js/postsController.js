@@ -1,5 +1,7 @@
-app.controller("postsController", function ($http) {
+app.controller("postsController", function (PostResource) {
+    // var self takes the place of $scope
     var self = this
+    self.posts = PostResource.posts
 
     self.posts = [
       {title: 'post 1', upvotes: 5},
@@ -23,7 +25,7 @@ app.controller("postsController", function ($http) {
       self.title = '';
       self.link = '';
      };
-      self.incrementUpvotes = function(post) {
-        post.upvotes +=1;
+      self.incrementUpvotes = function(posts) {
+        self.posts.upvotes +=1;
       }
     })
