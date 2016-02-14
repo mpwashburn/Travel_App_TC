@@ -8,6 +8,11 @@ var app = angular.module('travelApp', ['ngResource',
       url: '/',
       templateUrl: '/index.html',
       controller: 'postsController'
+    })
+    .state('posts',{
+      url: '/posts/{id}',
+      templateUrl: '/posts.html',
+      controller: 'postsController'
     });
     $urlRouterProvider.otherwise('home');
   }
