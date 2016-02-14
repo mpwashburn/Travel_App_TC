@@ -1,14 +1,13 @@
 var app = angular.module('travelApp', ['ngResource',
-                                       'ui.router'])
+                                       'ui.router',])
 
-.config([
-  '$stateProvider',
-  '$urlRouterProvider',
-  function($stateProvider, $urlRouterProvider){
-    .state('home',{
-      url: '/home',
-      templateUrl: '/home.html',
+  .config(PostRouter);
+  function PostRouter($stateProvider, $urlRouterProvider){
+    $stateProvider
+    .state('index',{
+      url: '/',
+      templateUrl: '/index.html',
       controller: 'postsController'
     });
     $urlRouterProvider.otherwise('home');
-  }])
+  }
