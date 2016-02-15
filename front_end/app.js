@@ -4,9 +4,9 @@ var app = angular.module('travelApp', ['ngResource',
   .config(PostRouter);
   function PostRouter($stateProvider, $urlRouterProvider){
     $stateProvider
-    .state('index',{
-      url: '/',
-      templateUrl: '/index.html',
+    .state('home',{
+      url: '/home',
+      templateUrl: '/home.html',
       controller: 'postsController'
     })
     .state('posts',{
