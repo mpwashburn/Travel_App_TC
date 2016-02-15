@@ -1,7 +1,7 @@
 var app = angular.module('travelApp', ['ngResource',
-                                       'ui.router',])
+                                       'ui.router',]);
 
-  .config(PostRouter);
+  app.config(PostRouter);
   function PostRouter($stateProvider, $urlRouterProvider){
     $stateProvider
     .state('home',{

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="travelApp">
 
   <head>
     <Title>Tripcited!</Title>
@@ -17,7 +17,7 @@
     <style> .glyphicon-thumbs-up { cursor:pointer } </style>
   </head>
 
-  <body ng-app="travelApp" ng-controller="postsController as content">
+  <body ng-controller="postsController as content">
   <!-- WILL PLACE THIS BACK IN LATER FOR STYLING AND ADDING NAVIGATION
     <div class="navbar-container">
     <nav class="navbar navbar-inverse" role="navigation">
@@ -33,8 +33,11 @@
 
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
+        <div class="page-header">
+            <h1>Tripcited!</h1>
+        </div>
 
-
+      <!-- Displays posted posts -->
       <div ng-repeat="vm in content.posts | orderBy: 'upvotes' ">
         <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(upvotes)">^</span>
           {{vm.upvotes}}
@@ -47,11 +50,10 @@
           </span>
           </span>
       </div>
-      </script>
-        <form ng-submit="content.addPost()"
-          style="margin-top:30px;">
-          <h3>Add a post</h3>
 
+      <!-- input fields for post -->
+        <form ng-submit="content.addPost()" style="margin-top:30px;">
+          <h3>Add a post</h3>
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Title" ng-model="content.title"></input>
           </div>
@@ -61,14 +63,9 @@
           <button type="submit" class="btn btn-primary">Post</button>
         </form>
 
-      </div>
-    </div>
       <script type="text/ng-template" id="/home.html">
-         <ui-view>
-          <div class="page-header">
-            <h1>Tripcited!</h1>
-          </div>
-      <div ng-repeat="comment in content.comments  | orderBy: '-upvotes'">
+      <ui-view>
+        <div ng-repeat="comment in content.comments  | orderBy: '-upvotes'">
         <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
         {{comment.upvotes}} - by {{comment.author}}
         <span style="font-size: 20px; margin-left: 10px;">
@@ -76,5 +73,8 @@
         </span>
       </div>
       </ui-view>
+      </script>
+      </div>
+    </div>
   </body>
 </html>
