@@ -23,17 +23,16 @@
   <body ng-controller="postsController as content">
 
     <div class="navbar-container">
-    <nav class="navbar navbar-inverse" role="navigation">
-      <div class="navbar-header">
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
         <a class="navbar-brand" ui-sref="#">Tripcited!</a>
-      </div>
-      <ul class="nav navbar-nav">
-          <li><a ui-sref="home">Home</a></li>
-          <li><a ui-sref="profile">Profile</a></li>
-      </ul>
-    </nav>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="profile">Profile</a></li>
+        </ul>
+      </nav>
     </div>
-
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="page-header">
@@ -42,7 +41,7 @@
 
       <!-- Displays posted posts -->
       <div ng-repeat="vm in content.posts | orderBy: 'upvotes' ">
-        <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(upvotes)">^</span>
+        <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(upvotes)"></span>
           {{vm.upvotes}}
           <span style="font-size:20px; margin-left:10px;">
           <a ng-show="vm.link" href="{{vm.link}}">
