@@ -1,14 +1,54 @@
+
 <div class="navbar-container">
     <nav class="navbar navbar-inverse" role="navigation">
       <div class="navbar-header">
-        <a class="navbar-brand" ui-sref="#">Tripcited!</a>
+        <a class="navbar-brand" ui-sref="#">Profile</a>
       </div>
       <ul class="nav navbar-nav">
-          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="/">Home</a></li>
       </ul>
     </nav>
     </div>
 
-<main>
+<main >
+
+  <h3>Your Dashboard</h3>
+<!-- Edit user information here. Bootstrap styling with a submit and delete button -->
+  <div ng-controller="usersCntrl as users">
+  <form>
+    <h4>Update your info here</h4>
+      <div id="updateInfo" class="col-xs-4" class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" ng-model="user.f_name"/>
+        <label>Last Name</label>
+        <input type="text" class="form-control" ng-model="user.l_name"/>
+        <label>Email</label>
+        <input type="email" class="form-control" ng-model="user.email"/>
+        <label>Username</label>
+        <input type="text" class="form-control" ng-model="user.username"/>
+        <br>
+        <button type="button" class="btn">Update Changes</button>
+        <button type="button" class="btn btn-danger">Delete profile</button>
+     </div>
+  </form>
+  </div>
+  <div ng-controller="contentCntrl as content">
+  <form>
+    <h4>Publish your post here</h4>
+      <div  id="addContent" class="col-xs-4" class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" ng-model="content.title"/>
+        <label>Image link</label>
+        <input type="url" class="form-control" ng-model="content.image"/>
+        <label>Body</label>
+        <input type="text" class="form-control" ng-model="content.body"/>
+        <label>Url link</label>
+        <input type="url" class="form-control" ng-model="content.src_url"/>
+
+        <br>
+        <button type="button" class="btn">Submit Post</button>
+     </div>
+  </form>
+  </div>
 
 </main>

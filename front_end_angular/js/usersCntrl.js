@@ -2,7 +2,7 @@ app.controller('usersCntrl', usersCntrl)
 
 function usersCntrl(){
   var self = this;
-
+  console.log("Hitting usersCntrl");
   self.usersBase = [
     {f_name: "Michael", l_name: "Washburn", email: "washburn.michael@gmail.com", username: "mpwashburn", password: "123456"},
     {f_name:"Loretta", l_name: "Jones", email: "lorettajones@gmail.com", username: "", password: "123456"}

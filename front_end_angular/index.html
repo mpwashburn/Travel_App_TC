@@ -4,40 +4,37 @@
     <Title>Tripcited!</Title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <!-- ui-router script -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <!-- resource script -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
+    <script src="src/ngFlowGrid.js"></script>
 
 
     <script src="app.js"></script>
     <script src="js/usersCntrl.js"></script>
+    <script src="js/contentCntrl.js"></script>
   </head>
 
   <body ng-app="travelApp">
 
-  <div class="navbar-container">
-    <nav class="navbar navbar-inverse" role="navigation">
-      <div class="navbar-header">
-        <a class="navbar-brand" ui-sref="#">Tripcited!</a>
-      </div>
-      <ul class="nav navbar-nav">
-          <li><a ui-sref="home">Home</a></li>
-          <li><a ui-sref="profile">Profile</a></li>
-      </ul>
-    </nav>
-    </div>
-
-    <div ui-view ng-controller="usersCntrl as users">
-    {{users.usersBase[0]}}
-    </div>
-
-    <!-- <div class="wrapper" ui-view ng-controller="contentCntrl as content">
+    <!-- <div class="navbar-container">
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+          <a class="navbar-brand" ui-sref="#">Tripcited!</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="profile">Profile</a></li>
+        </ul>
+      </nav>
     </div> -->
 
+    <ui-view></ui-view>
   </body>
 
 

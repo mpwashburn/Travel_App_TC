@@ -1,4 +1,5 @@
-var app = angular.module('travelApp', ['ui.router']);
+var app = angular.module('travelApp', ['ui.router',
+                                       'ngFlowGrid']);
 
   app.config(MainRouter);
 
@@ -8,13 +9,15 @@ function MainRouter($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home',{
       url: "/",
-      templateUrl: "home_partial.html"
+      templateUrl: 'partials/home_partial.html',
+      controller: 'contentCntrl'
     })
 
     .state('profile', {
       url: "/profile",
-      templateUrl: "profile_partial.html"
+      templateUrl: "partials/profile_partial.html",
+      controller: "usersCntrl"
     });
 
-    $urlRouterProvider.otherwise("/")
+    $urlRouterProvider.otherwise("/profile")
 }
