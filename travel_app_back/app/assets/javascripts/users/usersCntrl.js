@@ -17,16 +17,12 @@ function usersCntrl(){
     self.text = null;
   }
 
-  function update(user){
+  function updateUser(user){
     self.usersBase = angular.copy(user)
   }
 
   function deleteUser($index){
     self.userBase.splice($index, 1);
-  }
-
-  function updateUser(){
-
   }
 
 }

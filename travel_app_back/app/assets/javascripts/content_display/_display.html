@@ -1,0 +1,10 @@
+<!-- display template will be home to the ngFlowGrid that will show content on in a pinterest grid like way here.  -->
+<div ng-controller="contentCntrl as post">
+  <ul ng-repeat="single in post.content">
+    <li>{{single.src_url}}</li>
+    <li>{{single.image}}</li>
+    <li>{{single.title}}</li>
+    <li>{{single.body}}</li>
+  </ul>
+</div>
+

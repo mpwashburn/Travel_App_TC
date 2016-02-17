@@ -1,8 +1,10 @@
+// templates was injected here from the gem angular-rails template
 var app = angular.module('travelApp', ['ui.router',
                                        'templates',
                                        'ngFlowGrid']);
 
-  app.config(MainRouter);
+
+app.config(MainRouter);
 
 function MainRouter($stateProvider, $urlRouterProvider) {
 
@@ -10,13 +12,18 @@ function MainRouter($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home',{
       url: "/",
-      templateUrl: 'home/home_partial.html'
+      templateUrl: 'home/_home.html'
     })
 
     .state('profile', {
       url: "/profile",
-      templateUrl: "profile/profile_partial.html"
-    });
+      templateUrl: "users/_users.html"
+    })
+
+    .state('display',{
+      url: '/display',
+      templateUrl:'display/_display.html'
+    })
 
     $urlRouterProvider.otherwise("/profile")
 }
