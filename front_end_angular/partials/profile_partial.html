@@ -1,4 +1,3 @@
-
 <div class="navbar-container">
     <nav class="navbar navbar-inverse" role="navigation">
       <div class="navbar-header">
@@ -10,12 +9,18 @@
     </nav>
     </div>
 
-<main >
-
+<main>
   <h3>Your Dashboard</h3>
-<!-- Edit user information here. Bootstrap styling with a submit and delete button -->
-  <div ng-controller="usersCntrl as users">
-  <form>
+  <div ng-controller="usersCntrl as user">
+    <div ng-repeat="vm in user">
+      {{vm.userBase.f_name}}
+    </div>
+    </div>
+
+
+
+  <div>
+  <form class="update_user">
     <h4>Update your info here</h4>
       <div id="updateInfo" class="col-xs-4" class="form-group">
         <label>First Name</label>
@@ -27,11 +32,12 @@
         <label>Username</label>
         <input type="text" class="form-control" ng-model="user.username"/>
         <br>
-        <button type="button" class="btn">Update Changes</button>
-        <button type="button" class="btn btn-danger">Delete profile</button>
+        <button type="submit" class="btn" ng-click="update(user)">Update Changes</button>
+        <button type="button" class="btn btn-danger" >Delete profile</button>
      </div>
   </form>
   </div>
+
   <div ng-controller="contentCntrl as content">
   <form>
     <h4>Publish your post here</h4>
@@ -50,5 +56,4 @@
      </div>
   </form>
   </div>
-
 </main>
