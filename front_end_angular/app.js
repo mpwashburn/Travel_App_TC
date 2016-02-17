@@ -7,11 +7,11 @@ function MainRouter($stateProvider, $urlRouterProvider) {
 
 // states relate to each "view page" we have in our app.
   $stateProvider
-    .state('home',{
-      url: "/",
-      templateUrl: 'partials/home_partial.html',
-      controller: 'contentCntrl'
-    })
+    // .state('home',{
+    //   url: "/",
+    //   templateUrl: 'partials/home_partial.html',
+    //   controller: 'contentCntrl'
+    // })
 
     .state('profile', {
       url: "/profile",
