@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <Title>Tripcited!</Title>
+<head>
+  <Title>Tripcited!</Title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/main.css">
-<!-- bootstrap, ui-router, and angular cdn's removed b/c added as dependancy in bower.json and required in applicaiotn.js in rails backend -->
+
+    <!-- resource script -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
     <script src="src/ngFlowGrid.js"></script>
 
@@ -13,9 +14,11 @@
     <script src="app.js"></script>
     <script src="js/usersCntrl.js"></script>
     <script src="js/contentCntrl.js"></script>
-  </head>
-
-  <body ng-app="travelApp">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+</head>
+<body ng-app="travelApp">
 
     <ui-view></ui-view>
   </body>
