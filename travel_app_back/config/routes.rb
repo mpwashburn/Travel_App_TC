@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: 'application#angular'
 
+  namespace :api do
+    resources :contents
+  end
 
   resources :users
 
