@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   resources :contents
 
-  post  '/contents/:id/upvote/' => 'contents#upvote'
+  post  '/contents/:id/upvotes/' => 'contents#upvotes'
+  post '/contents/:id/downvotes' => 'contents#downvotes'
 
   resources :boards
   # The priority is based upon order of creation: first created -> highest priority.

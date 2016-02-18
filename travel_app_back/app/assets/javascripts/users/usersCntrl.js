@@ -9,7 +9,7 @@ function usersCntrl(){
   ];
   self.addUser    = addUser;
   self.deleteUser = deleteUser;
-  self.updateUser = updateUser;
+  // self.updateUser = updateUser;
 
 // adds a user to usersBase
   function addUser(){

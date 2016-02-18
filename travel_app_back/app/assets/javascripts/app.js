@@ -11,7 +11,7 @@ function MainRouter($stateProvider, $urlRouterProvider) {
 // states relate to each "view page" we have in our app.
   $stateProvider
     .state('home',{
-      url: "/",
+      url: "/home",
       templateUrl: 'home/_home.html'
     })
 
